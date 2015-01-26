@@ -1,6 +1,6 @@
 # PHP MySQL Session Handler
 
-PHP MySQL Session Handler is a PHP MySQL Session Handler written for use with [PHP-MySQL-PDO-Database-Class](https://github.com/jayc89/php-mysql-pdo-database-class)
+This repository contains a custom PHP session handler using MySQL as a backend. The class has been tested successfully using PHP-FPM and HHVM. To get started, it is recommended, although not required, this class is used in conjunction with [PHP-MySQL-PDO-Database-Class](https://github.com/jayc89/php-mysql-pdo-database-class).
 
 ## How to Install
 
