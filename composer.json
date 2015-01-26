@@ -1,0 +1,26 @@
+{
+    "name": "jayc89/php-mysql-session-handler",
+    "type": "library",
+    "description": "MySQL PHP Session Handler",
+    "keywords": ["php", "mysql", "sessions"],
+    "homepage": "http://github.com/jayc89/php-mysql-session-handler",
+    "license": "MIT",
+    "authors": [
+    {
+        "name": "Jamie Cressey",
+        "email": "jamiecressey89@gmail.com",
+        "homepage": "https://github.com/jayc89"
+    }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "suggest": {
+        "jayc89/php-mysql-pdo-database-class": "Quick and effective MySQL PDO class"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jayc89\\SessionHandler\\": "src/"
+        }
+    }
+}
