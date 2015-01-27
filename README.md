@@ -40,10 +40,10 @@ require 'vendor/autoload.php';
 $handler = new \Jayc89\SessionHandler\SessionHandler();
 
 // Pass DB details to create a new MySQLi connection
-handler->setDbDetails('localhost', 'username', 'password', 'database');
+$handler->setDbDetails('localhost', 'username', 'password', 'database');
 // OR alternatively, inject an existing MySQLi resource
 // $db = new Db(); // See: https://github.com/jayc89/php-mysql-pdo-database-class
-// handler->setDbConnection($db);
+// $handler->setDbConnection($db);
 
 $handler->setDbConnection($db);
 $handler->setDbTable('sessions');
