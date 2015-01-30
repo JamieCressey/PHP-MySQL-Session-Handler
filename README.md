@@ -1,5 +1,9 @@
 # PHP MySQL Session Handler
 
+[![Latest Stable Version](https://poser.pugx.org/jayc89/php-mysql-session-handler/v/stable.png)](https://packagist.org/packages/jayc89/php-mysql-session-handler)
+[![Total Downloads](https://poser.pugx.org/jayc89/php-mysql-session-handler/downloads.png)](https://packagist.org/packages/jayc89/php-mysql-session-handler)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jayc89/php-mysql-session-handler/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 This repository contains a custom PHP session handler using MySQL as a backend. The class has been tested successfully using PHP-FPM and HHVM. To get started, it is recommended, although not required, this class is used in conjunction with [PHP-MySQL-PDO-Database-Class](https://github.com/jayc89/php-mysql-pdo-database-class).
 
 ## How to Install
