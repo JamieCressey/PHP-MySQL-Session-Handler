@@ -75,7 +75,7 @@
 
         public function write($id, $data)
         {
-            $sql = "REPLACE INTO $this->dbTable VALUES(:id, :data, :timestamp)";
+            $sql = "REPLACE INTO $this->dbTable (id, data, timestamp) VALUES(:id, :data, :timestamp)";
             $params = array("id"=>$id, "data"=>$data, "timestamp"=>time());
             return $this->dbConnection->query($sql, $params);
         }
