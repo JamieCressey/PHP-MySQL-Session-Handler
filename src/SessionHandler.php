@@ -53,8 +53,11 @@
         public function open($savePath, $sessionName)
         {
             $limit = time() - (3600 * 24);
-            $sql = sprintf("DELETE FROM %s WHERE timestamp < %s", $this->dbTable, $limit);
-            return $this->dbConnection->query($sql);
+            $sql = "DELETE FROM $this->dbTable WHERE timestamp < :ts";
+            $params = array(
+                "ts" => $limit
+            );
+            return $this->dbConnection->query($sql, $params);
         }
 
         public function close()
@@ -65,7 +68,9 @@
         public function read($id)
         {
             $sql = "SELECT data FROM $this->dbTable WHERE id = :id";
-            $params = array("id"=>$id);
+            $params = array(
+                "id" => $id
+            );
             if ($result = $this->dbConnection->single($sql, $params)) {
                 return (string)$result;
             } else {
@@ -76,20 +81,29 @@
         public function write($id, $data)
         {
             $sql = "REPLACE INTO $this->dbTable (id, data, timestamp) VALUES(:id, :data, :timestamp)";
-            $params = array("id"=>$id, "data"=>$data, "timestamp"=>time());
+            $params = array(
+                "id" => $id,
+                "data" => $data,
+                "timestamp" => time()
+            );
             return $this->dbConnection->query($sql, $params);
         }
 
         public function destroy($id)
         {
-            $sql = "DELETE FROM $this->dbTable WHERE `id` = :id";
-            $params = array("id"=>$id);
+            $sql = "DELETE FROM $this->dbTable WHERE id = :id";
+            $params = array(
+                "id"=>$id
+            );
             return $this->dbConnection->query($sql, $params);
         }
 
         public function gc($maxlifetime)
         {
-            $sql = sprintf("DELETE FROM %s WHERE `timestamp` < '%s'", $this->dbTable, time() - intval($max));
-            return $this->dbConnection->query($sql);
+            $sql = "DELETE FROM $this->dbTable WHERE timestamp < :ts";
+            $params = array(
+                "ts" => time() - intval($maxlifetime)
+            );
+            return $this->dbConnection->query($sql, $params);
         }
     }
