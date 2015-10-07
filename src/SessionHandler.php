@@ -1,5 +1,5 @@
 <?php
-    namespace Jayc89\SessionHandler;
+    namespace JamieCressey\SessionHandler;
     class SessionHandler implements \SessionHandlerInterface
     {
         private $savePath;
